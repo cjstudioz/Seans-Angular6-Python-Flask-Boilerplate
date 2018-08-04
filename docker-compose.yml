@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   web:
     container_name: nginx
@@ -7,16 +8,16 @@ services:
       - "80:80"
     command: nginx -g "daemon off";
     volumes:
-      - ./AngularApp\dist:/www:ro
+      - ./AngularApp/dist/AngularApp:/www:ro
     depends_on:      
       - python_api
 
   python_api:
     build: 
       context: . 
-      dockerfile: Maps3DPythonApi/Dockerfile
+      dockerfile: PythonAPI/Dockerfile
     expose:
-      - "8000"
+      - "5000"
     volumes:
-      - ./python:/python
-    command: gunicorn -w 1 app:app -b :8000 --log-level debug --reload
+      - ./PythonAPI:/PythonAPI
+    command: gunicorn -w 1 app:app -b :5000 --log-level debug --reload

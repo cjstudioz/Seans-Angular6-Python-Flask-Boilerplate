@@ -14,7 +14,7 @@ export class CatService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl: string = '/cats';
+  baseUrl: string = '/api/cats';
 
   getCats() {
     return this.http.get<Cat[]>(this.baseUrl)
