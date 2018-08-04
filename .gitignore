@@ -6,8 +6,10 @@
 /PythonAPI/tcl
 /PythonAPI/get-pip.py
 /PythonAPI/pip-selfcheck.json
+/PythonAPI/.vscode
 
 /AngularApp/node_modules
 /AngularApp/package-lock.json
+/AngularApp/.vscode
 
 /.vscode
