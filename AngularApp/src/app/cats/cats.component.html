@@ -1,0 +1,26 @@
+<div class="col-md-12">
+  <h2>Cats</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Genus</th>
+        <th>Is Hungry</th>
+        <th>Last Fed Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cat of cats">
+        <td>{{cat.id}}</td>
+        <td>{{cat.name}}</td>
+        <td>{{cat.genus}}</td>
+        <td>{{cat.isHungry}}</td>
+        <td>{{cat.lastFedDate}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="alert(0)">Delete Cat</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
