@@ -9,3 +9,5 @@
 
 /AngularApp/node_modules
 /AngularApp/package-lock.json
+
+/.vscode
