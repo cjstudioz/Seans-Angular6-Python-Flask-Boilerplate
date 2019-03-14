@@ -7,6 +7,7 @@
 /PythonAPI/get-pip.py
 /PythonAPI/pip-selfcheck.json
 /PythonAPI/.vscode
+**/*.pyc
 
 /AngularApp/node_modules
 /AngularApp/package-lock.json

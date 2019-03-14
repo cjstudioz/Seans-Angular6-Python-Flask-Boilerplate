@@ -12,9 +12,9 @@ COPY ./nginx.conf	    /etc/nginx/nginx.conf
 #COPY ./localhost.crt	/etc/nginx/localhost.crt
 #COPY ./localhost.key	/etc/nginx/localhost.key
 COPY ./AngularApp /AngularApp
-WORKDIR AngularApp
-RUN npm install
-RUN npm install -g @angular/cli
+WORKDIR /AngularApp
+RUN npm install 
+RUN npm install -g @angular/cli@7.3.5
 RUN ng build --prod
 
 COPY ./AngularApp/dist/AngularApp   /www
