@@ -23,8 +23,7 @@ export class CatsComponent implements OnInit {
     this.catService.getCats()
       .subscribe((data) => {
         this.cats = data['cats'];
-      }),
-      error => this.error = error;
+      },
+        error => this.error = error);
   }
-
 }

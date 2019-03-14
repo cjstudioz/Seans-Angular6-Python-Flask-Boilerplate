@@ -8,9 +8,10 @@ import { DogsComponent } from './dogs/dogs.component';
 import { BirdsComponent } from './birds/birds.component';
 import { HomeComponent } from './home/home.component';
 
-import { routingModule } from "./app.routing";
+import { routingModule } from './app.routing';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { OkCancelComponent } from './ok-cancel/ok-cancel.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CatsComponent,
     DogsComponent,
     BirdsComponent,
-    HomeComponent
+    HomeComponent,
+    OkCancelComponent
   ],
   imports: [
     BrowserModule,
     routingModule,
     NgbModule.forRoot(),
-    HttpClientModule 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

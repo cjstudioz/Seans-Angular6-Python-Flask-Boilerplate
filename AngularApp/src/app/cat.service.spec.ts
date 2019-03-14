@@ -9,7 +9,7 @@ describe('CatService', () => {
     });
   });
 
-  // it('should be created', inject([CatService], (service: CatService) => {
-  //   expect(service).toBeTruthy();
-  // }));
+  it('should be created', inject([CatService], (service: CatService) => {
+    expect(service).toBeTruthy();
+  }));
 });

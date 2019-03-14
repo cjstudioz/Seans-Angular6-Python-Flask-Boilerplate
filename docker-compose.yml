@@ -1,11 +1,11 @@
-version: '3'
+version: '2'
 
 services:
   web:
     container_name: nginx
     build: .
     ports:
-      - "80:80"
+      - "4200:4200"
     command: nginx -g "daemon off";
     #volumes:
     #  - ./AngularApp/dist/AngularApp:/www:ro

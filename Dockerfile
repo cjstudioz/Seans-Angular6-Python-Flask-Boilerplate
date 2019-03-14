@@ -13,8 +13,11 @@ COPY ./nginx.conf	    /etc/nginx/nginx.conf
 #COPY ./localhost.key	/etc/nginx/localhost.key
 COPY ./AngularApp /AngularApp
 WORKDIR /AngularApp
-RUN npm install 
-RUN npm install -g @angular/cli@7.3.5
-RUN ng build --prod
 
-COPY ./AngularApp/dist/AngularApp   /www
+RUN npm install
+#RUN ng build --prod
+
+RUN node --max_old_space_size=1024 node_modules/@angular/cli/bin/ng build --prod
+#RUN ng serve
+#COPY ./AngularApp/dist/AngularApp   /www
+
