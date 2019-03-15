@@ -2,7 +2,7 @@ from app import app
 from flask import jsonify, abort, request
 from datetime import datetime, timedelta
 
-cats = [
+cats = [ #QUESTOIN: why is cats a list instead of a dict? can you explain the lookup by ID performance cost (O(m) notation) of a dict lookup vs a list lookup?
     {
         'id': 1,
         'name': u'Cosmo',
@@ -57,11 +57,11 @@ def create_cat():
             abort(400)
     else:
         abort(400)
-
+# QUESTOIN: why 4 nested if statements if all the <else> conditions do the same abort(400)?
 
 @app.route('/cats/<int:id>', methods=['PUT'])
 def update_cat(id):
-    cat = [cat for cat in cats if cat['id'] == id]
+    cat = [cat for cat in cats if cat['id'] == id] #QUESTOIN: this 3 line pattern seems to repeat quite a bit, what does htat suggest to you? what is hte O(n) cost of this lookup if cats were a ver ylong list of a million elements e.g.
     if len(cat) == 0:
         abort(404)
     if request.get_json():
@@ -79,12 +79,12 @@ def update_cat(id):
             abort(400)
     else:
         abort(400)
-
+# QUESTOIN: again: why 3 nested if statements if all the <else> conditions do the same abort(400)?
 
 @app.route('/cats/<int:id>', methods=['DELETE'])
 def delete_cat(id):
     cat = [cat for cat in cats if cat['id'] == id]
     if len(cat) == 0:
         abort(404)
-    cats.remove(cat[0])
+    cats.remove(cat[0]) #Question: what happens if there are 2 cats with the same id but different properties? if cats were a database table what built in primitives could we use to protect against these?
     return jsonify({'result': True})
